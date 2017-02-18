@@ -2,10 +2,10 @@ package tp
 
 class Creditos {
 	Integer cantidad
-	Participante participante
+
+    static belongsTo = [perfilColaborativo: PerfilColaborativo]
 
     static constraints = {
     	cantidad range: 0..10
-    	participante nullable: true
     }
 }

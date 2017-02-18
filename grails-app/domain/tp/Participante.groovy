@@ -1,23 +1,25 @@
 package tp
 
 class Participante {
-	DatosPersonales datosPersonales
-	Creditos creditos
-	PerfilColaborativo perfilColaborativo
 
-	static hasOne = [datosPersonales: DatosPersonales, creditos: Creditos, perfilColaborativo: PerfilColaborativo]
+    ArrayList documentos
+
+
+	static hasOne = [datosPersonales: DatosPersonales, perfilColaborativo: PerfilColaborativo]
 	static hasMany = [documentos: Documento]
-	static constraints = {
-        datosPersonales unique: true
-    }
-
+	static constraints = {}
+    
     Participante(){
     	datosPersonales = new DatosPersonales()
-    	creditos = new Creditos()
+        perfilColaborativo = new PerfilColaborativo()
+        documentos = new ArrayList()
     }
+
+    
     Participante(DatosPersonales datos){
     	datosPersonales = datos
-    	creditos = new Creditos(cantidad: 3)
     	perfilColaborativo = new PerfilColaborativo()
+        documentos = new ArrayList()
     }
+    
 }

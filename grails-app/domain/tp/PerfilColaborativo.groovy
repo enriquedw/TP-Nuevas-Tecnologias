@@ -1,17 +1,19 @@
 package tp
 
 class PerfilColaborativo {
-	static List cualidades = [new Cualidad(nombre: 'Productividad', descripcion: "sarasa"), 
-		new Cualidad(nombre: 'Asertividad', descripcion: "sarasa2")]
+	enum Cualidades { Productividad, Asertividad }
 	
-	Participante participante
 	Integer[] cualidadesValores
+    
 
+    static hasOne = [creditos: Creditos]
+    static belongsTo = [participante: Participante]
     static constraints = {
     	cualidadesValores maxSize: 2
     }
 
     PerfilColaborativo(){
+        creditos = new Creditos(perfilColaborativo: this, cantidad: 3)
     	cualidadesValores = [0, 0]
     }
 

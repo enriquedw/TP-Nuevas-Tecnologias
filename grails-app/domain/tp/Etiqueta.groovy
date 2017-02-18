@@ -1,11 +1,9 @@
 package tp
 
 class Etiqueta {
-	static def CATEGORIAS = ["Universidad", "Materia", "Otra"]
-	static String getCategorias() {
-		return this.Categorias
-	}
-	String categoria
+	enum Categorias{ Universidad, Materia, Otra}
+
+	Categorias categoria
 	String referencia
     static constraints = {
     }
