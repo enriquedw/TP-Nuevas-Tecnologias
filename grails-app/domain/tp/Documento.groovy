@@ -2,20 +2,26 @@ package tp
 
 class Documento {
 
-	static TIPOS_CANTIDAD = 2
-	static TIPOS_NOMBRES = ["Machete", "Notas"]
-	static TIPOS_DESC = ["sasa1", "sasa2"]
-	
-	Participante participante
-	private Integer tipo
+    enum TIPOS_NOMBRES { Machete, Notas}
+    enum ATRIBUTOS {Claridad, Efectividad}
+    Participante participante
+	TIPOS_NOMBRES tipo
 	String nombre
 	String descripcion
 	String archivo_path
 
 	static hasMany = [etiquetas: Etiqueta]
-
+    static hasOne = [tipoDoc: TipoDoc]
+    //static belongsTo = [participante: Participante]
+  
     static constraints = {
-    	
+    	etiquetas nullable: true
+    }
+
+
+/*
+    Documento(Participante un_participante) {
+        participante = un_participante
     }
 
     Documento DocumentoBuilder(String tipo_doc, unas_etiquetas){
@@ -33,5 +39,5 @@ class Documento {
 
         return doc
     }
-
+*/
 }

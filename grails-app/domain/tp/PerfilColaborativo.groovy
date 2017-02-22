@@ -4,6 +4,7 @@ class PerfilColaborativo {
 	enum Cualidades { Productividad, Asertividad }
 	
 	Integer[] cualidadesValores
+    Integer documentosPublicados
     
 
     static hasOne = [creditos: Creditos]
@@ -15,6 +16,7 @@ class PerfilColaborativo {
     PerfilColaborativo(){
         creditos = new Creditos(perfilColaborativo: this, cantidad: 3)
     	cualidadesValores = [0, 0]
+        documentosPublicados = 0
     }
 
 }

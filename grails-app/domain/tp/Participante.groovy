@@ -2,9 +2,6 @@ package tp
 
 class Participante {
 
-    ArrayList documentos
-
-
 	static hasOne = [datosPersonales: DatosPersonales, perfilColaborativo: PerfilColaborativo]
 	static hasMany = [documentos: Documento]
 	static constraints = {}

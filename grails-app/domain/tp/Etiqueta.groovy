@@ -7,6 +7,6 @@ class Etiqueta {
 	String referencia
     static constraints = {
     }
-
+    static belongsTo = [documento: Documento]
 
 }

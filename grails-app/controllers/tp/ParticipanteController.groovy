@@ -16,6 +16,7 @@ class ParticipanteController {
     def show(Participante participante) {
         respond participante
     }
+    
 
     def create() {      
         respond new Participante()
@@ -23,7 +24,9 @@ class ParticipanteController {
 
     @Transactional
     def save(Participante participante) {
+
         participante = new Participante(new DatosPersonales(params))
+
         if (participante == null) {
             transactionStatus.setRollbackOnly()
             notFound()
